@@ -1,6 +1,9 @@
+
+
 html, body { height:100%; }
 body {
     margin: 0;
+    font-family: 'Langar', cursive;    /*взял с google.fonts*/
 }
 .container {
     width: 100%;
@@ -54,4 +57,17 @@ body {
 }
 .note-view button {
     cursor: pointer;
+}
+
+/* my styles*/
+.options {
+    /* display: flex; */
+    /* flex-direction: row; */
+    float: right;
+    /* position: fixed; */
+    top: 20px;
+    right: 20px;
+
+
+
 }

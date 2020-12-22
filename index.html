@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet">
     <title>Notes App</title>
 </head>
 <body>
-<img src="images/notes-1.png"
+
 <div class="container">
     <div class="notes-container">
+        <button class="add-btn">Add note</button>
         <ul class="notes-list">
             <li>
                 <div class="note-title">Note title</div>
@@ -18,51 +21,16 @@
                 </div>
                 <button>Remove</button>
             </li>
-            <li>
-                <div class="note-title">Note title</div>
-                <div class="note-text">
-                    <span class="date">Сегодня, 17:20</span>
-                    <span class="text">text</span>
-                </div>
-                <button>Remove</button>
-            </li>
-            <li>
-                <div class="note-title">Note title</div>
-                <div class="note-text">
-                    <span class="date">Сегодня, 17:20</span>
-                    <span class="text">text</span>
-                </div>
-                <button>Remove</button>
-            </li>
-            <li>
-                <div class="note-title">Note title</div>
-                <div class="note-text">
-                    <span class="date">Сегодня, 17:20</span>
-                    <span class="text">text</span>
-                </div>
-                <button>Remove</button>
-            </li>
-            <li>
-                <div class="note-title">Note title</div>
-                <div class="note-text">
-                    <span class="date">Сегодня, 17:20</span>
-                    <span class="text">text</span>
-                </div>
-                <button>Remove</button>
-            </li>
-            <li>
-                <div class="note-title">Note title</div>
-                <div class="note-text">
-                    <span class="date">Сегодня, 17:20</span>
-                    <span class="text">text</span>
-                </div>
-                <button>Remove</button>
-            </li>
         </ul>
+        
     </div>
     <div class="note-view">
+        <div class="options">
+            
+            <button class="add-btn">Edit</button>
+        </div>
         <input id="note-title" type="text" />
-        <button class="add-btn">Add</button>
+
         <textarea class="note-text"></textarea>
     </div>
 </div>
