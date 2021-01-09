@@ -5,6 +5,9 @@ body {
     margin: 0;
     font-family: 'Langar', cursive;    /*взял с google.fonts*/
 }
+
+/*::-webkit-scrollbar*/
+
 .container {
     width: 100%;
     height: 100%;
@@ -67,7 +70,23 @@ body {
     /* position: fixed; */
     top: 20px;
     right: 20px;
-
-
-
+    width: 100%;
 }
+
+/* #add-btn {
+    float: top;
+    width: 100%;
+} */
+
+ /* .note-title { */
+    /* display: block; */
+    /* position: absolute; */
+    /* width: 100% */
+/* }  */
+
+/* .note-text {
+    display: block;
+    position: absolute;
+    height:auto;
+    width: 100%;
+} */

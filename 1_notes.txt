@@ -1,0 +1,19 @@
+1) перечень с темами заметок
+<ul class="notes-list">
+            <li>
+                <div class="note-title">Note title</div>
+                <div class="note-text">
+                    <span class="date">Сегодня, 17:20</span>
+                    <span class="text">text</span>
+                </div>
+                <button class="remove-btn">Remove</button>
+            </li>
+            <li>
+                <div class="note-title">Note title</div>
+                <div class="note-text">
+                    <span class="date">Сегодня, 17:20</span>
+                    <span class="text">text</span>
+                </div>
+                <button class="remove-btn">Remove</button>
+            </li>
+        </ul>

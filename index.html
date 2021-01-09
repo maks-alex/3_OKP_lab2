@@ -11,27 +11,32 @@
 
 <div class="container">
     <div class="notes-container">
-        <button class="add-btn">Add note</button>
-        <ul class="notes-list">
+        
+        <ul class="notes-list" id = "notes-list">
             <li>
                 <div class="note-title">Note title</div>
                 <div class="note-text">
                     <span class="date">Сегодня, 17:20</span>
                     <span class="text">text</span>
                 </div>
-                <button class="remove-btn">Remove</button>
+                <button>Remove</button>
             </li>
         </ul>
         
     </div>
     <div class="note-view">
         <div class="note-view-bar">
-            <button class="save-btn">Save</button>
-            <button class="edit-btn">Edit</button>
+            <button id="add-btn">Add note</button>
+            <button id="save-btn">Save</button>
+            <button id="edit-btn">Edit</button>
+            <button id="test-btn">Test</button>
         </div>
-        <input id="note-title" type="text" />
-
-        <textarea class="note-text"></textarea>
+            <div class=note-header>
+                <input class="note-title" id="note-title" type="text" placeholder="Note1"></input>
+                <!-- <div class="note-date" id="note-date" placeholder="функция даты"> </div> -->
+            </div>
+        
+        <textarea class="note-text" id="note-text" placeholder="Текст заметки1"></textarea>
     </div>
 </div>
 <script src="script.js"></script>
