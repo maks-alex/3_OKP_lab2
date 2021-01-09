@@ -78,15 +78,13 @@ body {
     width: 100%;
 } */
 
- /* .note-title { */
-    /* display: block; */
-    /* position: absolute; */
-    /* width: 100% */
-/* }  */
-
-/* .note-text {
+ .notes-title {
     display: block;
-    position: absolute;
-    height:auto;
-    width: 100%;
-} */
+    /* position: absolute; */
+    width: 100%
+} 
+.notes-text {
+    display: block;
+    /* position: absolute; */
+    width: 100%
+} 

@@ -8,19 +8,11 @@
     <title>Notes App</title>
 </head>
 <body>
-
+"use strict"
 <div class="container">
     <div class="notes-container">
         
         <ul class="notes-list" id = "notes-list">
-            <li>
-                <div class="note-title">Note title</div>
-                <div class="note-text">
-                    <span class="date">Сегодня, 17:20</span>
-                    <span class="text">text</span>
-                </div>
-                <button>Remove</button>
-            </li>
         </ul>
         
     </div>
@@ -32,11 +24,11 @@
             <button id="test-btn">Test</button>
         </div>
             <div class=note-header>
-                <input class="note-title" id="note-title" type="text" placeholder="Note1"></input>
+                <input class="note-title" id="note-title" type="text" placeholder="Тема"></input>
                 <!-- <div class="note-date" id="note-date" placeholder="функция даты"> </div> -->
             </div>
-        
-        <textarea class="note-text" id="note-text" placeholder="Текст заметки1"></textarea>
+            <div class="note-date" id="note-date" placeholder="функция даты"> </div>
+        <textarea class="note-text" id="note-text" placeholder="Текст"></textarea>
     </div>
 </div>
 <script src="script.js"></script>
