@@ -93,23 +93,32 @@ function removeNote(id) {
 }
                                             /*отображение перечня заметок после перезагрузки страницы*/
 function displayNotesList() {
-    // let notes = [];
+    let notes = [];
     
-    //     for (let i = 0; i < localStorage.length; i++){
-    //         notes.push(JSON.parse(localStorage.getItem(localStorage.key(i))))
-    //     }
+        for (let i = 0; i < localStorage.length; i++){
+            notes.push(JSON.parse(localStorage.getItem(localStorage.key(i))))
+        }
     
+    function notesDateCopmpare(note1, note2) {
+        let dateNote1 = (new Date(note1.date)).getTime();
+        let dateNote2 = (new Date(note2.date)).getTime();
+        // if (new Date(note1.date) > new Date(note2.date)) return 1;
+        // if (new Date(note1.date) = new Date(note2.date)) return 0;
+        // if (new Date(note1.date) < new Date(note2.date)) return -1;
+        return (dateNote1 - dateNote2)
+    }
+    notes.sort(notesDateCopmpare)
     
     let ul = document.getElementById("notes-list");
-    for (let i = 0; i < localStorage.length; i++) {
-        // let noteForList = [];
-        // noteForList.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
-    
-        let noteForList = JSON.parse(localStorage.getItem(localStorage.key(i)))
+    for (let i = 0; i < notes.length; i++) {
+ 
+        let noteForList = notes[i]
+        alert(noteForList.date +":"+ typeof(noteForList.date) )
+  
         let newNote = document.createElement("li");
     
         newNote.className = "note-list-elem";
-        newNote.id = noteForList.noteID;
+        // newNote.id = noteForList.noteID;
         newNote.innerHTML =
             `
         <div class="notes-title">${noteForList.title}</div>               
