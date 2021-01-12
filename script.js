@@ -52,47 +52,17 @@ for(let i=0; i<localStorage.length; i++) {
 */
 
                                             /*отобразить заметки в перечне заметок*/
+updateNotesList()
 displayNotesList()
-/*
-    let newNote = document.createElement("li");
-    newNote.className = "notes-list-elem";
-    newNote.id = noteID;
-
-    newNote.innerHTML =
-        `
-        <div class="notes-title">${title}</div>               
-        <div class="notes-text">
-            <span class="date">${date}</span>
-
-        </div>
-        <button class="removeBtn" id="${noteID}">Remove</button>
-        `;
-*/  
-    
-/*<span class="text">${note}</span>*/       /*в template в перечне была часть заметки, оставил темы*/    
-    // ul.prepend(newNote);
-
-    newNote()
-}
-
-function displayNote() {
-    
+newNote()
 }
 
 
-function editNote() {
-    
-}
 
-function removeNote(id) {
-    // let note = getElementByID(id);
-    localStorage.removeItem(id);
-    // note.remove(id);
-
-    newNote()
-}
                                             /*отображение перечня заметок после перезагрузки страницы*/
 function displayNotesList() {
+
+
     let notes = [];
     
         for (let i = 0; i < localStorage.length; i++){
@@ -113,12 +83,12 @@ function displayNotesList() {
     for (let i = 0; i < notes.length; i++) {
  
         let noteForList = notes[i]
-        alert(noteForList.date +":"+ typeof(noteForList.date) )
+        // alert(noteForList.date +":"+ typeof(noteForList.date) )
   
         let newNote = document.createElement("li");
     
         newNote.className = "note-list-elem";
-        // newNote.id = noteForList.noteID;
+        newNote.id = noteForList.noteID;
         newNote.innerHTML =
             `
         <div class="notes-title">${noteForList.title}</div>               
@@ -128,12 +98,41 @@ function displayNotesList() {
         </div>
         <button class="removeBtn" id="${noteForList.noteID}">Remove</button>
         `
+        newNote.querySelector("button").addEventListener('click', function () { removeNote(noteForList.noteID); });
+
         ul.prepend(newNote)
     }
 }
 
 
-                                            /*подсветить выбранную заметку*/
+function removeNote(noteID) {
+    // let note = getElementByID(noteID);
+    localStorage.removeItem(noteID);
+    // note.remove(noteID);
+    newNote()
+
+    updateNotesList()
+    
+    displayNotesList()
+}
+
+function updateNotesList() {
+    let liToRemove = document.getElementById("notes-list");
+        while (liToRemove.firstChild) {
+            liToRemove.firstChild.remove()
+        }
+}
+
+function displayNote() {
+    
+}
+
+
+function editNote() {
+    
+}
+
+                                                /*подсветить выбранную заметку*/
 // let selectedTd;
 // div.onclick = function(event) {
 //   let target = event.target; // где был клик?
