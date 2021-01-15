@@ -42,6 +42,7 @@ body {
 }
 
 .note-view {
+
     float: left;
     height: 100%;
     width: calc(100% - 304px);
@@ -55,6 +56,11 @@ body {
     width: calc(100% - 54px);
 }
 .note-view textarea {
+    background-image: url(images/notes-1.png);
+    background-repeat: no-repeat;
+    background-size:50%;
+    background-position: bottom 20px right 10px;
+    /* opacity: 0.5; */
     width: calc(100% - 10px);
     height: calc(100% - 38px);
 }
@@ -79,12 +85,27 @@ body {
 } */
 
  .notes-title {
+    /* opacity: 0; */
     display: block;
     /* position: absolute; */
     width: 100%
 } 
 .notes-text {
+    /* opacity: 0; */
     display: block;
     /* position: absolute; */
     width: 100%
 } 
+/* .logo {
+    width: 30%;
+    height: 30%;
+    position: absolut;
+    bottom: 1px;
+    right:1px;
+    z-index: 1;
+    background-image: url(images/notes-1.png);
+    background-repeat: no-repeat; */
+    background-size:50%;
+    background-position: bottom 20px right 10px;
+    opacity: 0.2
+} */
