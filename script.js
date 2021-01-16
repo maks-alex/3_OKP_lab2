@@ -111,7 +111,7 @@ function displayNotesList() {
 
         let newNote = document.createElement("li");
         
-        newNote.className = "note-list-elem";           /*attribut className*/
+        // newNote.className = "note-list-elem";           /*attribut className*/
         newNote.id = noteForList.noteID;                /*attribut id*/
         let dateForListDisplay = dateTime(noteForList.date)
         newNote.innerHTML =
@@ -124,11 +124,35 @@ function displayNotesList() {
         <button class="removeBtn" id="${noteForList.noteID}">Remove</button>
         `
         newNote.querySelector("button").addEventListener('click', function () { removeNote(noteForList.noteID); });
-        newNote.addEventListener('click', function () { displayNote(noteForList.noteID); });
+//        newNote.addEventListener('click', function () { displayNote(noteForList.noteID); });
 
-        ul.prepend(newNote)
+         ul.prepend(newNote)
     }
+
+                                                    /*подсветка выбранной заметки*/  
+    ul.addEventListener('click', function (event) {
+        let target = event.target.closest('li');
+
+        displayNote(target.id)
+    });
+
+    ul.addEventListener('click', function (event) {
+        let target = event.target.closest('li'); // где был клик?
+        // if (target.tagName != 'li') return; // не на TD? тогда не интересует
+        highlight(target); // подсветить TD
+    });
+    /********************************************************************************************************/
+    function highlight(li) {
+    if (selectedLi) { // убрать существующую подсветку, если есть
+      selectedLi.classList.remove('highlight');
+    }
+    selectedLi = li;
+    li.classList.add('highlight'); // подсветить новый td
+    };
+/********************************************************************************************************/
 }
+let selectedLi;
+
 
 function removeNote(noteID) {
     localStorage.removeItem(noteID);
@@ -155,27 +179,8 @@ function displayNote(noteID) {
     title.value = noteToDisplay.title;
     note.value = noteToDisplay.note;
     lastDisplayedNote = noteToDisplay.noteID
-/********************************************************************************************************/
-    let ul = document.getElementById("notes-list");
-    let selectedLi;
-    ul.onclick = function(event) {
-    let target = event.target; // где был клик?
-
-    if (target.tagName != 'li') return; // не на TD? тогда не интересует
-  
-    highlight(target); // подсветить TD
-    };
-/********************************************************************************************************/    
 }
 
-    function highlight(li) {
-    if (selectedLi) { // убрать существующую подсветку, если есть
-      selectedLi.classList.remove('highlight');
-    }
-    selectedLi = li;
-    selectedTd.classList.add('highlight'); // подсветить новый td
-    };
-/********************************************************************************************************/   
 let lastDisplayedNote;
 
 function editNote() {
